@@ -39,6 +39,8 @@ dependencies:
   dio: ^5.4.0
   http: ^1.2.0
   connectivity_plus: ^5.0.2
+  svg_icon: ^0.0.1
+  flutter_svg: ^0.22.0
 
 dev_dependencies:
   flutter_test:

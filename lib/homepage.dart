@@ -1,4 +1,5 @@
 import 'package:devtasks/http/users.dart';
+import 'package:devtasks/url-handling/url%20_input.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -25,8 +26,12 @@ class HomePage extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.all(8),
-            child: const Text('How'),
-            color: Colors.teal[200],
+            color: Colors.red,
+            child: TextButton(
+                onPressed: () {
+                  Get.to(() => UrlIconPage());
+                },
+                child: const Text('Url Input')),
           ),
           Container(
             padding: const EdgeInsets.all(8),
