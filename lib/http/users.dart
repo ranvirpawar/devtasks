@@ -16,6 +16,8 @@ class User {
 }
 
 class DataFromAPI extends StatefulWidget {
+  const DataFromAPI({super.key});
+
   @override
   _DataFromAPIState createState() => _DataFromAPIState();
 }
@@ -38,7 +40,7 @@ class _DataFromAPIState extends State<DataFromAPI> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Data from API'),
+        title: const Text('User Data from API'),
       ),
       body: Container(
         child: Card(
@@ -47,7 +49,7 @@ class _DataFromAPIState extends State<DataFromAPI> {
             builder: (context, AsyncSnapshot<List<User>> snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Container(
-                  child: Center(
+                  child: const Center(
                     child: Text('Loading...'),
                   ),
                 );
@@ -66,8 +68,8 @@ class _DataFromAPIState extends State<DataFromAPI> {
                         subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("User Id : " + snapshot.data![i].id),
-                              Text("User Email : " + snapshot.data![i].email),
+                              Text("User Id : ${snapshot.data![i].id}"),
+                              Text("User Email : ${snapshot.data![i].email}"),
                             ]));
                   },
                 );

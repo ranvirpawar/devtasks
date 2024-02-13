@@ -16,7 +16,6 @@ class UrlIconController extends GetxController {
     String? extension = url.split('.').last;
     if (extensions.containsKey(extension)) {
       icon.value = extensions[extension]!;
-      
     } else {
       icon.value = Icons.link;
     }
@@ -26,16 +25,17 @@ class UrlIconController extends GetxController {
 class UrlIconPage extends StatelessWidget {
   final UrlIconController urlController = Get.put(UrlIconController());
 
+  UrlIconPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     // Hardcoded URL
-    final String Url = "https://example.com/document.ppt";
+    const String Url = "https://example.com/document.pdf";
 
     // Update icon based on the hardcoded URL
     urlController.updateIcon(Url);
 
     return Scaffold(
-      appBar: AppBar(title: Text("URL Input")),
+      appBar: AppBar(title: const Text("URL Input")),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -43,11 +43,10 @@ class UrlIconPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Obx(() => Icon(urlController.icon.value)),
-              SizedBox(width: 8.0),
-              Text(
+              const SizedBox(width: 8.0),
+              const Text(
                 Url,
                 style: TextStyle(fontSize: 16.0),
-
               ),
             ],
           ),
