@@ -2,6 +2,7 @@ import 'package:data_analysis/charts/bar_chart.dart';
 import 'package:data_analysis/charts/dynamic.dart';
 import 'package:data_analysis/charts/pie_charts.dart';
 import 'package:data_analysis/circular_gauge_chart/circulargauge.dart';
+import 'package:data_analysis/circular_gauge_chart/cirlcular_gauge.dart';
 import 'package:data_analysis/radial_graphs/radialgraphs.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
@@ -61,10 +62,10 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: _fetchData,
-                child: const Text('fetch data'),
-              ),
+              // ElevatedButton(
+              //   onPressed: _fetchData,
+              //   child: const Text('fetch data'),
+              // ),
 
               // ElevatedButton(
               //   onPressed: _employees != null
@@ -87,30 +88,30 @@ class _HomePageState extends State<HomePage> {
               //   ),
               //   child: Text('Bar Chart'),
               // ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => PieChartSample2(),
-                    ),
-                  );
-                },
-                child: Text('Pie Chart'),
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ChartPage(),
-                    ),
-                  );
-                },
-                child: Text('Dynamic Chart '),
-              ),
+              // const SizedBox(height: 20),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => PieChartSample2(),
+              //       ),
+              //     );
+              //   },
+              //   child: Text('Pie Chart'),
+              // ),
+              // const SizedBox(height: 20),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) => ChartPage(),
+              //       ),
+              //     );
+              //   },
+              //   child: Text('Dynamic Chart '),
+              // ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
@@ -122,6 +123,31 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
                 child: Text('Radial Chart'),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SalaryComparisonGauge(
+                          persons: [
+                            Person('John', 50000),
+                            Person('Alice', 60000),
+                            Person('Bob', 70000),
+                            Person('Carol', 55000),
+                            Person('David', 75000),
+                            Person('Emily', 80000),
+                            Person('Frank', 65000),
+                            Person('Grace', 72000),
+                            Person('Henry', 68000),
+                            Person('Ivy', 59000),
+                          ],
+                          averageSalary: 67000,
+                        ),
+                      ));
+                },
+                child: Text('Radial Gauge chart'),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
@@ -152,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                   // ),
                   // ));
                 },
-                child: Text('Radial Gauge chart'),
+                child: Text('Radial Gauge chart 2'),
               )
             ],
           ),

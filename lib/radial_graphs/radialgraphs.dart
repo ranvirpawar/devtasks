@@ -39,7 +39,7 @@ class RadialChart extends StatelessWidget {
                     yValueMapper: (Employee employee, _) => employee.salary,
                     pointColorMapper: (Employee employee, _) =>
                         employee.color, // Assigning colors to employees
-                    cornerStyle: CornerStyle.bothFlat,
+                    cornerStyle: CornerStyle.endCurve,
                     innerRadius: '20%',
                     trackColor: Colors.deepPurple,
                     gap: '0',
